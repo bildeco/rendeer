@@ -1,8 +1,6 @@
 {
   "whitelist": [
-    "://[^.]+\\.techinasia\\.com",
-    "://[^.]+\\.algolia",
-    "://d2wy8f7a9ursnm\\.cloudfront\\.net"
+    "://[^.]+\\.bildeco\\.com"
   ],
   "cacheControl": {
     "maxAge" : 31536000
@@ -11,7 +9,7 @@
     "expiry": 2592000
   },
   "render": {
-    "timeout": 15
+    "timeout": 30
   },
   "page": {
     "timeout": 60

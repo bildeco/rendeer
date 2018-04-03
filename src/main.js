@@ -38,7 +38,9 @@ const fetchContent = async (pageURL) => {
     console.log('Launch browser!');
     browser = await puppeteer.launch({
       ignoreHTTPSErrors: true,
+      headless: false,
       args: [
+        '--disable-http2',
         '--no-sandbox',
         '--disable-dev-shm-usage',
       ],
@@ -48,7 +50,7 @@ const fetchContent = async (pageURL) => {
   // Open page
   const page = await browser.newPage();
   page.setDefaultNavigationTimeout(config.page.timeout * 1000);
-  await page.setRequestInterception(true);
+  await page.setRequestInterception(false);
   page.on('request', (request) => {
     const url = request.url();
     const method = request.method();
@@ -71,6 +73,7 @@ const fetchContent = async (pageURL) => {
       request.continue();
     }
   });
+  page.on('console', msg => console.log('PAGE LOG:', msg.text()));
 
   // Fetch page
   console.log(`Fetch: ${pageURL}`);

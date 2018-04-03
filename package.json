@@ -4,10 +4,10 @@
   "description": "When Puppeteer meets Prerender",
   "license": "MIT",
   "author": "Tech in Asia .develop <dev@techinasia.com> (https://www.techinasia.com)",
-  "homepage": "https://github.com/techinasia/rendeer",
+  "homepage": "https://github.com/bildeco/rendeer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/techinasia/rendeer.git"
+    "url": "https://github.com/bildeco/rendeer.git"
   },
   "main": "src/main.js",
   "scripts": {
@@ -38,7 +38,7 @@
     "md5": "~2.2.1",
     "memcache-plus": "~0.2.18",
     "p-timeout": "~2.0.1",
-    "puppeteer": "~1.0.0"
+    "puppeteer": "~1.2.0"
   },
   "engines": {
     "node": ">=7.6"
