@@ -42,6 +42,7 @@ const fetchContent = async (pageURL) => {
       args: [
         '--disable-http2',
         '--no-sandbox',
+	'--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
       ],
     });
