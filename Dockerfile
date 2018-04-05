@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
 # It's a good idea to use dumb-init to help prevent zombie chrome processes.
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
+RUN dumb-init -- "google-chrome-unstable --no-sandbox"
 
 COPY . /app/
 
@@ -38,7 +39,7 @@ USER rendeer
 
 EXPOSE 8080
 
-RUN dumb-init -- google-chrome-unstable
+#RUN dumb-init -- google-chrome-unstable
 
 RUN npm install --production || \
   ((if [ -f npm-debug.log ]; then \
