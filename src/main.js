@@ -38,7 +38,7 @@ const fetchContent = async (pageURL) => {
     console.log('Launch browser!');
     browser = await puppeteer.launch({
       ignoreHTTPSErrors: true,
-      headless: false,
+      headless: true,
       args: [
         '--disable-http2',
         '--no-sandbox',
