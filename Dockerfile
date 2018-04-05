@@ -39,8 +39,6 @@ USER rendeer
 
 EXPOSE 8080
 
-#RUN dumb-init -- google-chrome-unstable
-
 RUN npm install --production || \
   ((if [ -f npm-debug.log ]; then \
       cat npm-debug.log; \
